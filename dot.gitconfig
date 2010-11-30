@@ -1,0 +1,35 @@
+[user]
+    name        = Naohiro Sakuma
+    email       = n.sakuma@everyleaf.com
+
+[color]
+    ui          = true
+
+[color "branch"]
+    current     = green reverse
+    local       = green
+    remote      = red
+
+[color "status"]
+    added       = cyan
+    changed     = yellow
+    untracked   = magenta
+
+[color "diff"]
+    whitespace	= cyan reverse
+
+[alias]
+    co          = checkout
+    ci          = commit
+    br          = branch
+    bra         = branch -a
+    st          = status
+    last        = log -1 HEAD
+    unstage     = reset HEAD --
+
+[commit]
+    template    = /Users/nao/.git_commit_temp
+
+[core]
+    editor      = emacs
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
