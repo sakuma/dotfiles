@@ -1,0 +1,114 @@
+## screen config
+
+###
+### key bind
+###
+
+## prefixキー C-[
+escape ^c^c
+
+# bind -c REGION o focus down
+# bind -c REGION p focus up
+bind -c REGION 0 remove
+bind -c REGION 1 only
+bind -c REGION 2 split
+bind -c REGION 3 split -v
+bind -c REGION ¥^ resize +2
+bind -c REGION } resize +2
+bind -c REGION { resize -2
+bind x command -c REGION
+
+bind j focus down
+bind k focus up
+# bind t focus top
+# bind b focus bottom
+
+# (Ctrl-c s) で横分割
+bind s eval split focus other
+
+# 新しい画面を生成してbashを実行。画面の名前はnew term
+# bind n screen -t "new term" bash
+
+
+###
+### encoding
+###
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+
+
+###
+### Window
+###
+
+
+# window list の表示方法を変更
+bind w windowlist -b
+
+# タイトルバーをステータス表示に使う
+termcapinfo  xterm|kterm|kterm-color 'hs:ts=¥E]2;:fs=¥007:ds=¥E]0;screen¥007'
+# terminfo xterm|kterm|kterm-color XT # for mice
+defscrollback 1000
+
+# 最終行のウィンドウ一覧を表示
+hardstatus alwayslastline "%{= wk} %-w%{=bu Bw} %f* %n %t %{-} %+w %= %{=b wk} %{=b wb} %l   "
+
+# %` 『Substitute with the output of a 'backtick' command.』
+# %-w 現在のウインドウより前のwindow番号とwindow名
+# %+w 現在のウインドウより後のwindow番号とwindow名
+# %{=b bw} 色設定 bold blue white
+# %n 現在のwindow番号
+# %t 現在のwindow名
+# %{-} 色クリア
+
+# hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw% %l"
+
+# status表示のformat
+# hardstatus string " %m/%d %D %c [%n:%Lw] %H:%h"
+
+# caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d %{=b wm}%c"
+# caption always "%?%F%{= wk}%:%{= ww}%?%-w%{=u Wk}%n %t%{-}%+w"
+# caption always "%{= Rk} %?%F%{b kr}%? %?%h%:%t (screen #%n)%? %{-}"
+# sorendition "= Rk"
+
+# attrcolor b "R"
+
+
+###
+### config
+###
+
+# スタートアップページを表示しない
+startup_message off
+
+# ビープ音を鳴らさない
+vbell off
+
+# make the shell in every window a login shell
+shell -$SHELL
+
+# 回線が切れた場合に自動的にデタッチするか
+autodetach on
+
+defscrollback 20000
+
+## ------------------------------
+## pending
+## ------------------------------
+
+# 新しいwindowを開く度に/etc/utmpにentryを追加するか
+# deflogin off
+
+# bell "Bell in window %." # 隠れているwindowでのbellを通知
+# activity "Activity in window %." # 隠れているwindowの状態変化を通知
+
+# detach on hangup
+## m:month, d:day, D:weekday, c:current time in 24h,
+## n:window number, w:all window numbers, H:hostname,
+## h:hardstatus of the window, l:current load of the system
+# defhstatus "^En:^Et"
+# defhstatus "screen: ^E (^Et)"
+
+# スクロールバックバッファーをマウスで操作
+termcapinfo xterm* ti@:te@
