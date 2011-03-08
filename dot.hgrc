@@ -1,0 +1,31 @@
+[ui]
+username = Naohiro Sakuma <n.sakuma@everyleaf.com>
+verbose = True
+editor = emacsclient
+ssh = ssh -C
+# ssh = ssh -i ~/.ssh/bitbucket -C
+
+# [paths]
+# default = ssh://hg@bitbucket.org/n_sakuma/test
+
+[defaults]
+log = -v
+# status = -m
+
+[extensions]
+hgext.color =
+hgext.progress =
+hgext.graphlog =
+hgext.bookmarks =
+hgext.rebase =
+# hg-git = /usr/share/hg-git/hggit
+hg-git = ~/hg-git
+schemes =
+
+[schemes]
+# SSHの場合
+# bitbucket = ssh://hg@bitbucket.org/
+
+[git]
+intree=1
+# exportbranch=refs/heads/master
