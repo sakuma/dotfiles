@@ -76,3 +76,36 @@ export rvm_always_trust_rvmrc_flag
 # Add configure flags for builds
 #
 export rvm_configure_flags="--with-readline-dir=$rvm_path/usr"
+
+
+
+
+
+
+##################################################################
+##
+##   Snow Leopard or Lion  with Xcode 4.2
+##
+# ----------------------------------------------------------------------
+#　$ rvm install 1.9.2 -C --with-readline-dir=$HOME/.rvm/usr
+#　Installing Ruby from source to: /Users/nao/.rvm/rubies/ruby-1.9.2-p290, this may take a while depending on your cpu(s)...
+#　
+#　ruby-1.9.2-p290 - #fetching
+#　ruby-1.9.2-p290 - #extracted to /Users/nao/.rvm/src/ruby-1.9.2-p290 (already extracted)
+#　Fetching yaml-0.1.4.tar.gz to /Users/nao/.rvm/archives
+#　Extracting yaml-0.1.4.tar.gz to /Users/nao/.rvm/src
+#　Configuring yaml in /Users/nao/.rvm/src/yaml-0.1.4.
+#　Compiling yaml in /Users/nao/.rvm/src/yaml-0.1.4.
+#　Installing yaml to /Users/nao/.rvm/usr
+#　ruby-1.9.2-p290 - #configuring
+#　ruby-1.9.2-p290 - #compiling
+#　ERROR: Error running 'make ', please read /Users/nao/.rvm/log/ruby-1.9.2-p290/make.log
+#　ERROR: There has been an error while running make. Halting the installation.
+# ----------------------------------------------------------------------
+#
+#         ↓
+#
+#  $ sudo port install apple-gcc42
+#  $ export CC=/opt/local/bin/gcc-apple-4.2
+#  $ rvm install ruby-1.9.2-p290 -C --with-readline-dir=$HOME/.rvm/usr
+#
