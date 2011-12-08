@@ -68,3 +68,11 @@ export rvm_always_trust_rvmrc_flag
 # Rubinius scripts. For example, to always run the agent when running from
 # an Rubinius environment, set the value to '-Xagent'
 # export rvm_rbx_opt
+
+# Disable automatic system configuration of RVM via /etc/profile.d/rvm.sh:
+#
+# export rvm_etc_profile_flag=0
+#
+# Add configure flags for builds
+#
+export rvm_configure_flags="--with-readline-dir=$rvm_path/usr"
