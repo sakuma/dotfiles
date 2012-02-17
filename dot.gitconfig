@@ -38,6 +38,8 @@
     template    = $HOME/.git_commit_temp
 
 [core]
-    editor      = emacsclient
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
+[branch]
+    autosetuprebase = always
+
