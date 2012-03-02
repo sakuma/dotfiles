@@ -35,7 +35,7 @@
     log-all     = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
 
 [commit]
-    template    = $HOME/.git_commit_temp
+    # template    = $HOME/.git_commit_temp
 
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
