@@ -4,7 +4,18 @@ cat <<EOS
 
 EOS
 
-dotfiles=(dot.gitconfig dot.gemrc)
+if [[ ! -d $HOME/bin ]]; then
+  mkdir $HOME/bin
+fi
+
+bin_dir=$HOME/dotfiles/bin
+for file in `ls $bin_dir`; do
+  if [[ ! -e $HOME/bin/$file ]]; then
+    ln -s $bin_dir/$file $HOME/bin
+  fi
+done
+
+dotfiles=(dot.gitconfig dot.gemrc dot.tmux.conf)
 
 for file in ${dotfiles[@]}; do
   deploy_file=$( echo $file | sed -e 's/dot//' )
