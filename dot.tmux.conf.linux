@@ -1,0 +1,65 @@
+# Set the prefix to ^c
+set-option -g prefix C-c
+unbind-key C-b
+bind C-c send-prefix
+
+# StatusLine
+
+
+# set-window-option -g window-status-bg white
+# set-window-option -g window-status-fg black
+set-window-option -g window-status-current-bg white # black
+set-window-option -g window-status-current-fg blue # black # red
+set-window-option -g window-status-current-attr bold,underscore
+
+#set -g status-right '| #[fg=blue] CPU (#(Loadaverage)) Mem #(used-mem)%%#[default] | %y/%m/%d(%a)%H:%M:%S#[default] '
+# Rightの表示領域最大長
+set -g status-right-length 90
+
+# set-option -g status-left ' '
+# set-option -g status-right '%Y/%m/%d %H:%M'
+
+
+# Option
+set-window-option -g utf8 on
+set-option -g mouse-select-pane on
+# ウィンドウ番号を1から開始
+set-option -g base-index 1
+
+####################
+# CopyMode vi
+#
+# usage:
+#   *copy*
+#     range - start : [Space]
+#             end   : [Enter]
+#     one line      : Y
+#
+#   *paste* : prefix '['
+#
+set-window-option -g mode-keys vi
+bind-key -t vi-copy Y copy-line
+
+# 256color
+set-option -g default-terminal screen-256color
+
+# Keybind
+# ウィンドウの破棄
+unbind k
+bind k confirm-before "kill-window"
+# ペインの破棄
+unbind K
+bind K confirm-before "kill-pane"
+
+bind ! break-pane -d # カレントペインを新しいウィンドウで開く
+bind = split-window -v # ペインを横に分割
+unbind %
+bind | split-window -h # ペインを縦に分割
+
+# 前回のウィンドウへ移動
+unbind C-t
+bind C-t last-window
+
+# 時計
+bind z clock-mode
+
