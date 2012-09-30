@@ -41,6 +41,7 @@
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
     editor = /usr/bin/env vim
+    excludesfile = $HOME/.gitignore_global
 
 [branch]
     autosetuprebase = always
