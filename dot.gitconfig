@@ -40,8 +40,8 @@
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
-    excludesfile = $HOME/.gitignore_global
     editor = /usr/env/bin vim
+    excludesfile = ~/.global_ignore
 
 [branch]
     autosetuprebase = always
@@ -51,4 +51,4 @@
     sslVerify = false
 
 [push]
-	default = upstream
+    default = upstream
