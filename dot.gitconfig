@@ -19,7 +19,7 @@
     whitespace  = cyan reverse
 
 [format]
-    pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
+    pretty = %C(yellow)%h%Creset %s [%an(%cn)] - %C(red) %ar - [%ai(%ci)] %Creset
 
 [alias]
     co          = checkout
