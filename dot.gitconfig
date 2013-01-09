@@ -28,6 +28,11 @@
     bra         = branch -a
     st          = status
     d           = diff
+    dc          = diff --cached
+    dw          = diff -w
+    dn          = diff --name-only
+    dwd         = diff --word-diff
+    diffr       = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
     unstage     = reset HEAD --
     last        = log -1 HEAD
     unstage     = reset HEAD --
