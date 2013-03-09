@@ -31,6 +31,7 @@
     dc          = diff --cached
     dw          = diff -w
     dn          = diff --name-only
+    dt          = difftool
     dwd         = diff --word-diff
     diffr       = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
     unstage     = reset HEAD --
@@ -57,3 +58,9 @@
 
 [push]
     default = upstream
+[merge]
+ tool = vimdiff
+[diff]
+ tool = vimdiff
+[difftool]
+ prompt = false
