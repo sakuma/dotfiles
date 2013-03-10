@@ -32,6 +32,7 @@
     dw          = diff -w
     dn          = diff --name-only
     dt          = difftool
+    mt          = mergetool
     dwd         = diff --word-diff
     diffr       = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
     unstage     = reset HEAD --
@@ -58,9 +59,15 @@
 
 [push]
     default = upstream
+
 [merge]
- tool = vimdiff
+    tool = vimdiff
+
+[mergetool]
+    keepBackup = false
+
 [diff]
- tool = vimdiff
+    tool = vimdiff
+
 [difftool]
- prompt = false
+    prompt = false
