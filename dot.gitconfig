@@ -36,6 +36,7 @@
     dwd         = diff --word-diff
     diffr       = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
     unstage     = reset HEAD --
+    modified    = ls-files --modified
     last        = log -1 HEAD
     unstage     = reset HEAD --
     glog        = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
