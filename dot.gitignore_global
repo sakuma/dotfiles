@@ -16,4 +16,8 @@ Icon
 
 # Rails
 .rvmrc
+.ruby-version
+.ruby-gemset
+.ruby-gemsets
 .powrc
+.watsonrc
