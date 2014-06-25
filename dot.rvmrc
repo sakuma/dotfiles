@@ -92,3 +92,5 @@ export rvm_gem_options="--no-rdoc --no-ri"
 # export rvm_configure_flags="--with-openssl-dir=$rvm_path/usr --with-readline-dir=$rvm_path/usr"
 
 #
+
+rvm_without_gems="rvm rubygems-bundler"
