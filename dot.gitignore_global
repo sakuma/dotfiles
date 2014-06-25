@@ -14,10 +14,10 @@ Icon
 .Spotlight-V100
 .Trashes
 
-# Rails
+# Ruby/Rails
 .rvmrc
 .ruby-version
 .ruby-gemset
-.ruby-gemsets
+.rbenv-gemsets
 .powrc
 .watsonrc
