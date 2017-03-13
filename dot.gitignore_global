@@ -21,3 +21,8 @@ Icon
 .rbenv-gemsets
 .powrc
 .watsonrc
+Icon
+*.vagrant
+
+# Python
+.python-version

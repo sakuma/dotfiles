@@ -1,7 +1,6 @@
 [user]
     name        = Naohiro Sakuma
     email       = nao.bear@gmail.com
-    ; email       = n.sakuma@everyleaf.com
 
 [color]
     ui          = true
@@ -42,18 +41,20 @@
     unstage     = reset HEAD --
     glog        = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
     log-all     = log --graph --all --color --pretty='%x09%h %cn%x09%s %Cred%d%Creset'
+    delete-merged-branches = !git branch --merged | grep -vE '^\\*|master$|develop$' | xargs -I % git branch -d %
 
 [commit]
     # template    = $HOME/.git_commit_temp
 
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    autocrlf = input
+    # whitespace=fix,-indent-with-non-tab,trailing-space
+    # autocrlf = input
     editor = /usr/bin/env vim
     excludesfile = ~/.gitignore_global
 
 [branch]
-    autosetuprebase = always
+    # autosetuprebase = always
 
 # httpプロトコルでのGitリポジトリ で 自己証明書を使用する場合
 [http]
@@ -64,12 +65,14 @@
 
 [merge]
     tool = vimdiff
+    ff = true
 
 [mergetool]
     keepBackup = false
 
 [diff]
-  tool = vimdiff
+    tool = vimdiff
+    compactionHeuristic = true
 
 [difftool]
     prompt = false
@@ -79,3 +82,14 @@
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
+[filter "media"]
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+[github]
+  user = sakuma
+[ghi]
+  token = !security find-internet-password -a sakuma -s github.com -l 'ghi token' -w
+  # token = 2aed9d4ca1f7d97be945b544ca6aa94e3ff2393a
+[ghq]
+  root = ~/work/src
