@@ -93,3 +93,8 @@
   # token = 2aed9d4ca1f7d97be945b544ca6aa94e3ff2393a
 [ghq]
   root = ~/work/src
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
